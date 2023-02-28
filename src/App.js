@@ -16,6 +16,8 @@ function App() {
           <th>Picture</th>
           <th>Name</th>
           <th>Popularity</th>
+          <th>Won an Oscar</th>
+          <th>Won an Emmy</th>
         </tr>
         {onlyFiveContacts.map((eachElement) => {
           return (
@@ -23,6 +25,8 @@ function App() {
               <td><img src={eachElement.pictureUrl} alt={eachElement.name} width="100px" /></td>
               <td>{eachElement.name}</td>
               <td>{eachElement.popularity.toFixed(2)}</td>
+              <td>{eachElement.wonOscar === true && <h2>🏆</h2>}</td>
+              <td>{eachElement.wonEmmy === true && <h2>🏆</h2>}</td>
             </tr>
           )
         })}
